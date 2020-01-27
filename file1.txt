@@ -1,0 +1,30 @@
+Name:N.Roopa sri
+Roll no: 174g1a0474
+Title: Cross correlation
+
+Program:
+%cross correlation of two sequences
+clc;
+clear all;
+close all;
+x=[1,2,3,4];
+h=[2,3,4,5];
+n=length(x);
+m=length(h);
+k=n+m-1;
+x=[x,zeros(1,k-n)]';
+fliplr(h);
+h=[h,zeros(1,k-m)]';
+for i=1:k
+    c(:,i)=circshift(x,i-1);
+end;
+y=c*h;
+disp('correlation ouput of sequence:');
+disp(y');
+stem(y');
+
+Result:
+
+correlation ouput of sequence:
+5 14 26 40 29 18 8
+ 
