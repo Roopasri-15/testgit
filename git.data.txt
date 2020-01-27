@@ -1,0 +1,38 @@
+Name: N.Roopa sri
+Roll number:174g1a0474
+Title: Convolution of two sequences
+Date:13-01-2020
+
+
+
+clc;
+clear all;
+close all;
+x=input('Enter the values of x');
+h=input('Enter the values of h');
+m=length(x);
+n=length(h);
+X=[x,zeros(1,n)];
+H=[h,zeros(1,m)];
+for i=1:m+n-1
+    y(i)=0;
+    for j=1:m
+        if(i-j+1>0)
+            y(i)=y(i)+x(j).*H(i-j+1);
+        else
+        end
+    end
+end
+disp('Convolution of sequence is');
+disp(y);
+stem(y);
+xlabel('----->n');
+ylabel('y(n)');
+title('Convolution of two sequences without usung built in functions');
+
+Result:
+
+Enter the values of x:[1 2 3 4]
+Enter the values of h:[5 6 7 8]
+Covolution of sequence is
+     5    16    34    60    61    52    32
